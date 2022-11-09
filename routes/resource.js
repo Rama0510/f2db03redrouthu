@@ -6,7 +6,7 @@ var api_controller = require('../controllers/api');
 var car_controller = require('../controllers/car'); 
  
 /// API ROUTE /// 
- 
+
 // GET resources base. 
 router.get('/', api_controller.api); 
  
