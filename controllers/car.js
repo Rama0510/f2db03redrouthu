@@ -1,4 +1,16 @@
 var car = require('../models/car'); 
+// List of all car 
+exports.car_list = async function(req, res) { 
+    try{ 
+        thecar = await car.find(); 
+        res.send(thecar); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+}; 
+ 
  
 // List of all car 
 exports.car_list = function(req, res) { 
