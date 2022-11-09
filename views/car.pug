@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1= title
-  - let results=[{car_name:"BMW",car_color:red,car_size:100},{car_name:"KIA",car_color:bule,car_size:100},{car_name:"Honda",car_color:sliver,car_size:150}]
+  - let results = car_results
   div(class="container-fluid")
   div(class="row")
   each value,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.car_name} BMW, color #{value.car_color}, with seating #{value.car_size}
+     div.col-sm-2(onclick=`buy(${index})`) car Name: #{item["car_Name"]} <br> car clour: #{item["car_clour"]} <br> car Size: #{item["car_Size"]}
   script.
     function buy(index)
     {
