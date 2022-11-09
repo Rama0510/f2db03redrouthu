@@ -13,9 +13,9 @@
     "http-errors": "^2.0.0",
     "install": "^0.13.0",
     "mongodb": "^4.11.0",
-    "mongoose": "^6.7.1",
+    "mongoose": "^6.7.2",
     "morgan": "^1.10.0",
-    "npm": "^8.19.2",
+    "npm": "^8.19.3",
     "pug": "^3.0.2"
   },
   "main": "app.js",
