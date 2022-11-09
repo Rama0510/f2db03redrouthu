@@ -25,6 +25,7 @@ var usersRouter = require('./routes/users');
 var appRouter = require('./routes/car');
 var gridbuildRouter = require('./routes/gridbuild');
 var selectorRouter = require('./routes/selector');
+var resourceRouter = require('./routes/resource');
 
 var app = express();
 
@@ -36,20 +37,20 @@ async function recreateDB(){
   // Delete everything 
   await car.deleteMany();
   let instance1 = new 
-car({car_name:"BMW",car_color:red,car_size:100}); 
+car({car_name:"BMW",car_color:"red",car_size:100}); 
   instance1.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("First object saved") 
   }); 
   let instance2 = new 
-car({car_name:"KIA",car_color:blue,car_size:100}); 
-  instance1.save( function(err,doc) { 
+car({car_name:"KIA",car_color:"blue",car_size:100}); 
+  instance2.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Second object saved") 
   }); 
   let instance3 = new 
-car({car_name:"Honda",car_color:silver,car_size:150}); 
-  instance1.save( function(err,doc) { 
+car({car_name:"Honda",car_color:"silver",car_size:150}); 
+  instance3.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Third object saved") 
   }); 
@@ -69,6 +70,8 @@ app.use('/users', usersRouter);
 app.use('/car', appRouter);
 app.use('/gridbuild', gridbuildRouter);
 app.use('/selector', selectorRouter);
+app.use('/resource', resourceRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
