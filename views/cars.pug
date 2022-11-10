@@ -6,7 +6,7 @@ block content
   div.container-fluid 
     div.row 
         each item, index in results
-            div.col-sm-2(onclick=`buy(${index})`) car Name: #{item["car_Name"]} <br> car color: #{item["car_color"]} <br> car Size: #{item["car_Size"]} <br> car Rating: #{item["car_Rating"]} <br> car Category: #{item["car_Category"]}
+            div.col-sm-2(onclick=`buy(${index})`) car name: #{item["car_name"]} <br> car color: #{item["car_color"]} <br> car size: #{item["car_size"]} 
 
   script.
     function buy(index) {
