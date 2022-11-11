@@ -5,4 +5,5 @@ const carSchema = mongoose.Schema({
     car_size : Number
 }) 
  
-module.exports = mongoose.model("car",carSchema)
+module.exports = mongoose.model("Car",carSchema)
+

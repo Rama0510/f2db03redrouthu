@@ -6,25 +6,25 @@ var api_controller = require('../controllers/api');
 var car_controller = require('../controllers/car'); 
  
 /// API ROUTE /// 
-
+ 
 // GET resources base. 
-router.get('/cars', api_controller.api); 
+router.get('/', api_controller.api); 
  
-/// car ROUTES /// 
+/// COSTUME ROUTES /// 
  
-// POST request for creating a car.  
+// POST request for creating a Costume.  
 router.post('/cars', car_controller.car_create_post); 
  
-// DELETE request to delete car. 
+// DELETE request to delete Costume. 
 router.delete('/cars/:id', car_controller.car_delete); 
  
-// PUT request to update car. 
+// PUT request to update Costume. 
 router.put('/cars/:id', car_controller.car_update_put); 
  
-// GET request for one car. 
+// GET request for one Costume. 
 router.get('/cars/:id', car_controller.car_detail); 
  
-// GET request for list of all car items. 
+// GET request for list of all Costume items. 
 router.get('/cars', car_controller.car_list); 
  
-module.exports = router; 
+module.exports = router;
