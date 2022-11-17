@@ -2,8 +2,11 @@ extends layout
  
 block content 
   h1= title 
- 
-  - let carid = toShow._id  
+
+   if (toShow == null) 
+    h2 No instance to delete 
+  else
+  - let car_id = toShow._id  
   - let car_name = toShow.car_name 
   - let car_color = toShow.car_color
   - let car_size = toShow.car_size
