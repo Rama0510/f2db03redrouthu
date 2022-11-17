@@ -1,0 +1,38 @@
+extends layout 
+ 
+block content 
+  h1= title 
+  
+  
+  form(id='carForm', action="/resource/car", method="POST" ,class='d') 
+    div(class='d').form-group
+        img(src='/images/Audi.png' width="100px" height:) 
+    div.form-group 
+        label.carAttr(for='car_name') car_name
+        input#car_name(type='text', name='car_name') 
+    div.form-group 
+        label.carAttr(for='car_color') car_color 
+        input#car_color(type='text', name='car_color') 
+    di.form-group 
+        label.carAttr(for='car_size') car_size 
+        input#car_size(type='number', name='car_size') 
+    input(type="submit") 
+    
+ 
+  script. 
+    document.forms['carForm'].addEventListener('submit', (event) => { 
+      event.preventDefault(); 
+      // TODO do something here to show user that form is being submitted 
+      fetch(event.target.action, { 
+        method: 'POST', 
+        body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Save succeded") 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Save failed " + error ) 
+      }); 
+    }); 
