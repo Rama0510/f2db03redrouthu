@@ -1,14 +1,35 @@
 extends layout
-
 block content
-  h1= title
-  - let results=[{car_name:"BMW",car_color:red,car_size:100},{car_name:"KIA",car_color:bule,car_size:100},{car_name:"Honda",car_color:sliver,car_size:150}]
-  div(class="container-fluid")
-  div(class="row")
-  each value,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.car_name} BMW, color #{value.car_color}, with seating #{value.car_size}
-  script.
-    function buy(index)
-    {
-      alert(`Your purchased Item ${index+1}`)
-    }
+  h1(style="text-align:center;")= title
+  -let items = results
+  div(class="container-fluid") 
+  div(class="row m-1") 
+    each item in items  
+      - let destination = `dispatch(\"/cars/update?id=${item._id}\")`
+      div(class="row-sm-2" class="m-1") Car Name#{item.name} Car colour #{item.color}  Car size#{item.size} 
+        button.btn( class="btn-primary ml-1", onclick= destination) Update
+  script. 
+    function dispatch(path){ 
+      window.location.href=path 
+    } 
+
+  //- -let list =[{name:"Audi",color:"red",size:150},{name:"BMW",color:"blue",size:120},{name:"Honda",color:"sliver",size:170}]
+  //- div(class="container-fluid")
+  //- div(class="row")
+  //-   each car,index in list
+  //-     table(style='width:100%')
+  //-       tr
+  //-         div(class="col-sm-2" onclick=`buy(${index})`) #{car.name}
+  //-         div(class="col-sm-2" onclick=`buy(${index})`) #{car.color}
+  //-         div(class="col-sm-2" onclick=`buy(${index})`) #{car.size}
+  //-   script.
+  //-     function buy(item){
+  //-       alert(`You Have choose Item:${item+1}`) 
+  //-     } 
+
+
+
+
+
+
+
