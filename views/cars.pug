@@ -1,13 +1,21 @@
 extends layout
 block content
   h1(style="text-align:center;")= title
+  - let destinationcreate = `dispatch(\"/cars/create\")`
+   button.btn( class="btn-primary ml-1", onclick= destinationcreate) Create
   -let items = results
   div(class="container-fluid") 
   div(class="row m-1") 
     each item in items  
       - let destination = `dispatch(\"/cars/update?id=${item._id}\")`
+      - let destinationdelete = `dispatch(\"/cars/delete?id=${item._id}\")`
+      - let destinationdetail = `dispatch(\"/cars/detail?id=${item._id}\")`
       div(class="row-sm-2" class="m-1") Car Name#{item.name} Car colour #{item.color}  Car size#{item.size} 
         button.btn( class="btn-primary ml-1", onclick= destination) Update
+        button.btn( class="btn-primary ml-1", onclick= destinationdelete) Delete
+        button.btn( class="btn-primary ml-1", onclick= destinationdetail) Detail
+        
+
   script. 
     function dispatch(path){ 
       window.location.href=path 

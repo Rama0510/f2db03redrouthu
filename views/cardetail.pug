@@ -1,25 +1,26 @@
-extends layout 
- 
-block content 
-  h1= title 
+extends layout
 
-   if (toShow == null) 
-    h2 No instance to delete 
+block content
+ h1= title
+
+  if (toShow==null)
+   h2 No Instance to detail
   else
-  - let car_id = toShow._id  
-  - let car_name = toShow.car_name 
-  - let car_color = toShow.car_color
-  - let car_size = toShow.car_size
-  div 
+   - let car_id = toShow._id 
+   - let car_name = toShow.car_name 
+   - let car_color = toShow.car_color 
+   - let car_size = toShow.car_size
+    div 
     div.row 
-      div(class='carAttr mr-3') car ID is: 
-      div #{carid} 
+      div(class='carAttr mr-3') car_ID is: 
+      div #{car_id} 
     div.row 
       div(class='carAttr mr-3') car_name is: 
       div #{car_name} 
     div.row 
-      div(class='carAttr mr-3') car_color is: 
+      div(class='carAttr mr-3')  car_color is: 
       div #{car_color} 
     div.row 
       div(class='carAttr mr-3') car_size is: 
       div #{car_size} 
+
